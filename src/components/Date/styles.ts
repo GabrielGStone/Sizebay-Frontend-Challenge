@@ -12,8 +12,19 @@ export const Wrap = styled.div`
   flex-direction: column;
 `;
 export const Day = styled.div`
-  font-size: 79px;
+  display: flex;
+
+  font-weight: 600;
+  font-size: 60px;
 `;
-export const Month = styled.div``;
-export const Year = styled.div``;
+export const Month = styled.div`
+  font-weight: 300;
+
+  font-size: 24px;
+`;
+export const Year = styled.div`
+  align-self: flex-end;
+  font-weight: 100;
+  font-size: 24px;
+`;
 export const Weekday = styled.div``;
