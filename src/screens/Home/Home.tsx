@@ -1,5 +1,12 @@
+import Background from "../../components/Background";
+import Modal from "../../components/Modal";
+
 const Home = () => {
-  return <></>;
+  return (
+    <Background>
+      <Modal />
+    </Background>
+  );
 };
 
 export default Home;
