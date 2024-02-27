@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   height: 79px;
+  margin-bottom: 24px;
 `;
 
 export const Wrap = styled.div`
@@ -13,13 +14,11 @@ export const Wrap = styled.div`
 `;
 export const Day = styled.div`
   display: flex;
-
   font-weight: 600;
   font-size: 60px;
 `;
 export const Month = styled.div`
   font-weight: 300;
-
   font-size: 24px;
 `;
 export const Year = styled.div`

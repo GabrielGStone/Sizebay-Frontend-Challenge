@@ -1,5 +1,7 @@
+import { Container } from "./styles";
+
 const ProgressBar = () => {
-  return <></>;
+  return <Container></Container>;
 };
 
 export default ProgressBar;
