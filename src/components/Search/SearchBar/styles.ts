@@ -13,10 +13,12 @@ export const Box = styled.div`
   display: flex;
   align-items: center;
   border: 1px solid #dbdbdb;
+  border-radius: 4px;
   padding-right: 16px;
+`;
+
+export const Glass = styled.div`
   &:hover {
     cursor: pointer;
   }
 `;
-
-export const Glass = styled.div``;
