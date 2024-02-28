@@ -1,5 +1,6 @@
 import AddItems from "../AddItems";
 import Dates from "../Date/Date";
+import Items from "../Items";
 import ProgressBar from "../ProgressBar";
 import Search from "../Search";
 import { Container } from "./styles";
@@ -11,6 +12,7 @@ const Modal = () => {
       <ProgressBar />
       <Search />
       <AddItems />
+      <Items />
     </Container>
   );
 };
