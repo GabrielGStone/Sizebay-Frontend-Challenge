@@ -35,7 +35,6 @@ export const DeleteTask = styled.div`
   width: 44px;
   height: 100%;
   background-color: #e34f4f;
-  font-weight: 400;
   &:hover {
     cursor: pointer;
   }
@@ -49,7 +48,6 @@ export const CompleteTask = styled.div`
   background-color: #5de290;
   border: 1px solid #5de290;
   border-radius: 0 4px 4px 0;
-  font-weight: 900;
   &:hover {
     cursor: pointer;
   }
@@ -61,6 +59,23 @@ export const Circle = styled.div`
   justify-content: center;
   border-radius: 50%;
   background-color: #fff;
+  width: 20px;
+  font-weight: 900;
+  height: 20px;
+  font-size: 12px;
+
+  color: #5de290;
+`;
+
+export const Circle2 = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #e34f4f;
+  font-size: 20px;
   width: 20px;
   height: 20px;
 `;

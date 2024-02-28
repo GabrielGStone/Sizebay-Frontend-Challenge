@@ -6,11 +6,11 @@ import { RootState } from "../../state";
 const Items = () => {
   const todo = useSelector((state: RootState) => state.todo.tasks);
 
-  const mock = [1, 2, 3];
+  console.log(todo);
   return (
     <Container>
-      {todo.map(() => (
-        <Item />
+      {todo.map(({ id, title, isChecked }: any) => (
+        <Item id={id} title={title} isChecked={isChecked} />
       ))}
     </Container>
   );
