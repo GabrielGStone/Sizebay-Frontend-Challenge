@@ -1,5 +1,6 @@
 import Dates from "../Date/Date";
 import ProgressBar from "../ProgressBar";
+import Search from "../Search";
 import { Container } from "./styles";
 
 const Modal = () => {
@@ -7,6 +8,7 @@ const Modal = () => {
     <Container>
       <Dates />
       <ProgressBar />
+      <Search />
     </Container>
   );
 };
