@@ -7,6 +7,7 @@ export const Button = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 32px;
   border-radius: 20px;
   padding: 8px 16px;
   border: 1px solid ${(isActived) => (isActived ? " #4da6b3" : "red")};
