@@ -30,8 +30,7 @@ export const Add = styled.div`
   background-color: #4da6b3;
   border: 1px solid #4da6b3;
   border-radius: 0 4px 4px 0;
-  color: #4da6b3;
-  font-weight: 900;
+  font-weight: 400;
   &:hover {
     cursor: pointer;
   }
@@ -42,6 +41,7 @@ export const Circle = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  color: #4da6b3;
   background-color: #fff;
   width: 20px;
   height: 20px;

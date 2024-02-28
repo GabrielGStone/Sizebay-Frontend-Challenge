@@ -18,12 +18,14 @@ export const Day = styled.div`
   font-size: 60px;
 `;
 export const Month = styled.div`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 24px;
 `;
 export const Year = styled.div`
   align-self: flex-end;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 24px;
 `;
-export const Weekday = styled.div``;
+export const Weekday = styled.div`
+  font-weight: 300;
+`;
