@@ -13,7 +13,7 @@ export const Box = styled.div`
   cursor: pointer;
 `;
 
-export const Text = styled.div`
+export const Text = styled.input`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,6 +28,7 @@ export const Buttons = styled.div`
   height: 100%;
   color: rgba(0, 0, 0, 0);
 `;
+
 export const DeleteTask = styled.div`
   display: flex;
   align-items: center;
@@ -63,7 +64,6 @@ export const Circle = styled.div`
   font-weight: 900;
   height: 20px;
   font-size: 12px;
-
   color: #5de290;
 `;
 

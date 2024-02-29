@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Input, Add, Box, Circle } from "./styles";
 import { todoActions } from "../../state";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 const AddItems = () => {
   const dispatch = useDispatch();

@@ -9,7 +9,7 @@ const initialState: InitialState = {
     {
       id: 1,
       title: "Do a great job and join the best Product team B)",
-      isChecked: false,
+      isDone: false,
     },
   ],
 };
@@ -26,7 +26,7 @@ const todoSlice = createSlice({
       state.tasks[taskIndex] = {
         id: action.payload.id,
         title: action.payload.title,
-        isChecked: action.payload.isChecked,
+        isDone: action.payload.isDone,
       };
     },
 
@@ -34,7 +34,7 @@ const todoSlice = createSlice({
       state.tasks.push({
         id: new Date(),
         title: action.payload,
-        isChecked: false,
+        isDone: false,
       });
     },
 

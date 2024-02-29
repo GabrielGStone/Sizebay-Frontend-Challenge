@@ -9,8 +9,10 @@ const Items = () => {
   console.log(todo);
   return (
     <Container>
-      {todo.map(({ id, title, isChecked }: any) => (
-        <Item id={id} title={title} isChecked={isChecked} />
+      {todo.map(({ id, title, isDone }: any) => (
+        <div key={id} style={{ width: "100%" }}>
+          <Item id={id} title={title} isDone={isDone} />
+        </div>
       ))}
     </Container>
   );
