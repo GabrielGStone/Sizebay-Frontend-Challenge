@@ -33,7 +33,7 @@ const todoSlice = createSlice({
     setTodo: (state, action) => {
       state.tasks.push({
         id: new Date(),
-        title: action.payload.title,
+        title: action.payload,
         isChecked: false,
       });
     },
