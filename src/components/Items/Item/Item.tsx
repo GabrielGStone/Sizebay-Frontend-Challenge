@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   Box,
   Buttons,
@@ -10,6 +10,7 @@ import {
 } from "./styles";
 import { useDispatch } from "react-redux";
 import { todoActions } from "../../../state";
+import { useDebounce } from "@uidotdev/usehooks";
 
 interface itemProps {
   id: any;
@@ -20,7 +21,7 @@ const Item: FC<itemProps> = ({ id, title, isDone }) => {
   const dispatch = useDispatch();
   const [inputText, setInputText] = useState(title);
   const [doneToggle, setDoneToggle] = useState(!!isDone);
-
+  const textDebounce = useDebounce(inputText, 300);
   const checkTodo = (isDone: boolean) => {
     const payload = {
       isDone: isDone,
@@ -34,6 +35,13 @@ const Item: FC<itemProps> = ({ id, title, isDone }) => {
     setDoneToggle(!doneToggle);
     checkTodo(!doneToggle);
   };
+
+  useEffect(() => {
+    const payload = { id: id, isDone: isDone, title: inputText };
+    dispatch(todoActions.editTodo(payload));
+    // eslint-disable-next-line
+  }, [textDebounce]);
+
   return (
     <Box>
       <Text value={inputText} onChange={(e) => setInputText(e.target.value)} />
