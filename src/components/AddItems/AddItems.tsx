@@ -11,12 +11,20 @@ const AddItems = () => {
     if (text) dispatch(todoActions.setTodo(text));
     setText("");
   };
+
+  const handleKeyPress = (e: any) => {
+    if (e.key === "Enter") {
+      handleAddTask();
+    }
+  };
+
   return (
     <Box>
       <Input
         placeholder="Add new item…"
         value={text}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
+        onKeyPress={handleKeyPress}
       />
       <Add onClick={() => handleAddTask()}>
         <Circle>+</Circle>
