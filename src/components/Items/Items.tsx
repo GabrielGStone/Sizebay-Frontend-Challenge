@@ -1,15 +1,21 @@
-import { useSelector } from "react-redux";
 import Item from "./Item";
 import { Container } from "./styles";
-import { RootState } from "../../state";
+import { FC } from "react";
 
-const Items = () => {
-  const todo = useSelector((state: RootState) => state.todo.tasks);
+interface itemsProps {
+  todo: any;
+  searchTodo: any;
+}
+const Items: FC<itemsProps> = ({ todo, searchTodo }) => {
+  let selectedTasks = todo;
 
-  console.log(todo);
+  selectedTasks = selectedTasks.filter((todo: any) =>
+    todo.title.toLowerCase().includes(searchTodo.toLowerCase())
+  );
+
   return (
     <Container>
-      {todo.map(({ id, title, isDone }: any) => (
+      {selectedTasks.map(({ id, title, isDone }: any) => (
         <div key={id} style={{ width: "100%" }}>
           <Item id={id} title={title} isDone={isDone} />
         </div>

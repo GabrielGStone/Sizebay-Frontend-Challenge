@@ -2,7 +2,6 @@ import { Container, Day, Month, Wrap, Year } from "./styles";
 
 const Dates = () => {
   const dataAtual: Date = new Date();
-  console.log(dataAtual);
   return (
     <Container>
       <div style={{ display: "flex", alignItems: "center" }}>
