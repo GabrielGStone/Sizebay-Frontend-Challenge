@@ -1,6 +1,6 @@
 import Item from "./Item";
 import { Container } from "./styles";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
 interface itemsProps {
   todo: any;

@@ -1,7 +1,15 @@
-import { Container } from "./styles";
+import { FC } from "react";
+import { Container, GrennBar } from "./styles";
 
-const ProgressBar = () => {
-  return <Container></Container>;
+interface barProps {
+  progress: number;
+}
+const ProgressBar: FC<barProps> = ({ progress }) => {
+  return (
+    <Container>
+      <GrennBar progress={progress} />
+    </Container>
+  );
 };
 
 export default ProgressBar;
