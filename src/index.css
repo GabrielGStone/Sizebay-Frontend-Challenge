@@ -5,3 +5,17 @@
   color: #848484;
   font-family: roboto;
 }
+
+::-webkit-scrollbar {
+  width: 9px;
+  background-color: #e4e4e4;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #848484;
+  border-radius: 9px;
+}

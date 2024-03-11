@@ -1,6 +1,6 @@
 import Item from "./Item";
 import { Container } from "./styles";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 interface itemsProps {
   todo: any;
@@ -16,7 +16,7 @@ const Items: FC<itemsProps> = ({ todo, searchTodo }) => {
   return (
     <Container>
       {selectedTasks.map(({ id, title, isDone }: any) => (
-        <div key={id} style={{ width: "100%" }}>
+        <div key={id} style={{ width: "680px" }}>
           <Item id={id} title={title} isDone={isDone} />
         </div>
       ))}
