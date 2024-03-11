@@ -46,7 +46,6 @@ const Item: FC<itemProps> = ({ id, title, isDone }) => {
     <Box>
       <Text value={inputText} onChange={(e) => setInputText(e.target.value)} />
       <Buttons>
-        {isDone ? <div>done</div> : ""}
         <DeleteTask onClick={() => dispatch(todoActions.deleteTodo(id))}>
           <Circle2>-</Circle2>
         </DeleteTask>
