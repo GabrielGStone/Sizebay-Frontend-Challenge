@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Container, GrennBar } from "./styles";
 
 interface barProps {
-  progress: number;
+  progress: any;
 }
 const ProgressBar: FC<barProps> = ({ progress }) => {
   return (

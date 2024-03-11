@@ -4,11 +4,16 @@ import { FC } from "react";
 
 interface itemsProps {
   todo: any;
-  searchTodo: any;
+  searchTodo: string;
+  selected: string;
 }
-const Items: FC<itemsProps> = ({ todo, searchTodo }) => {
+const Items: FC<itemsProps> = ({ todo, searchTodo, selected }) => {
   let selectedTasks = todo;
 
+  if (selected)
+    selectedTasks = selectedTasks.filter((todo: any) =>
+      selected === "done" ? todo.isDone === true : todo.isDone === false
+    );
   selectedTasks = selectedTasks.filter((todo: any) =>
     todo.title.toLowerCase().includes(searchTodo.toLowerCase())
   );

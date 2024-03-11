@@ -12,22 +12,31 @@ const Modal = () => {
   const todo = useSelector((state: RootState) => state.todo.tasks);
   const [searchTodo, setSearchTodo] = useState("");
   const [progress, setProgress] = useState(0);
+  const [selected, setSelected] = useState("");
 
-  const a = todo.filter((data: any) => {
+  const tasksDone = todo.filter((data: any) => {
     return data.isDone === true;
   });
 
   useEffect(() => {
-    a && setProgress((a.length / todo.length) * 100);
-  }, [todo.length, a]);
+    if (tasksDone)
+      todo.length
+        ? setProgress((tasksDone.length / todo.length) * 100)
+        : setProgress(0);
+  }, [todo, tasksDone]);
 
   return (
     <Container>
       <Dates />
       <ProgressBar progress={progress} />
-      <Search searchTodo={searchTodo} setSearchTodo={setSearchTodo} />
+      <Search
+        searchTodo={searchTodo}
+        setSearchTodo={setSearchTodo}
+        selected={selected}
+        setSelected={setSelected}
+      />
       <AddItems />
-      <Items todo={todo} searchTodo={searchTodo} />
+      <Items todo={todo} searchTodo={searchTodo} selected={selected} />
     </Container>
   );
 };
