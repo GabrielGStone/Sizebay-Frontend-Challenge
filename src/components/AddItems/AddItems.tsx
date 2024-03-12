@@ -1,9 +1,14 @@
 import { useDispatch } from "react-redux";
 import { Input, Add, Box, Circle } from "./styles";
 import { todoActions } from "../../state";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 
-const AddItems = () => {
+interface addItemProps {
+  taskSelected: number;
+  setTaskSelected: any;
+}
+
+const AddItems: FC<addItemProps> = ({ taskSelected, setTaskSelected }) => {
   const dispatch = useDispatch();
   const [text, setText] = useState("");
 
@@ -19,14 +24,15 @@ const AddItems = () => {
   };
 
   return (
-    <Box>
+    <Box onClick={() => setTaskSelected(0)} taskSelected={taskSelected}>
       <Input
         placeholder="Add new item…"
         value={text}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
         onKeyDown={handleKeyPress}
+        taskSelected={taskSelected}
       />
-      <Add onClick={() => handleAddTask()}>
+      <Add onClick={() => handleAddTask()} taskSelected={taskSelected}>
         <Circle>+</Circle>
       </Add>
     </Box>

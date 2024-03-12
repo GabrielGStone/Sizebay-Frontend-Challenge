@@ -2,27 +2,34 @@ import { FC } from "react";
 import { Button } from "./styles";
 
 interface buttonProps {
-  selected: string;
-  setSelected: any;
+  buttonSelected: string;
+  setButtonSelected: any;
 }
-const FilterButtons: FC<buttonProps> = ({ selected, setSelected }) => {
+const FilterButtons: FC<buttonProps> = ({
+  buttonSelected,
+  setButtonSelected,
+}) => {
   return (
     <div style={{ display: "flex" }}>
       <Button
         onClick={() =>
-          selected === "done" ? setSelected("") : setSelected("done")
+          buttonSelected === "done"
+            ? setButtonSelected("")
+            : setButtonSelected("done")
         }
-        selected={selected === "done"}
+        buttonSelected={buttonSelected === "done"}
       >
-        {selected === "done" ? "✓" : ""} Done
+        {buttonSelected === "done" ? "✓" : ""} Done
       </Button>
       <Button
         onClick={() =>
-          selected === "pending" ? setSelected("") : setSelected("pending")
+          buttonSelected === "pending"
+            ? setButtonSelected("")
+            : setButtonSelected("pending")
         }
-        selected={false}
+        buttonSelected={false}
       >
-        {selected === "pending" ? "✓" : ""} Pending
+        {buttonSelected === "pending" ? "✓" : ""} Pending
       </Button>
     </div>
   );

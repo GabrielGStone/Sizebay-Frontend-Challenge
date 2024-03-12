@@ -1,38 +1,46 @@
 import styled from "styled-components";
 
-export const Box = styled.div`
+interface boxProps {
+  taskSelected?: number;
+}
+
+export const Box = styled.div<boxProps>`
   display: flex;
   align-items: center;
   width: 100%;
   height: 48px;
   border: 1px solid #dbdbdb;
   border-radius: 4px;
-  color: #848484;
   margin-bottom: 16px;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<boxProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 1;
+  height: 100%;
   border: none;
   outline: none;
   padding: 10px 0 10px 16px;
+  background-color: ${({ taskSelected }) =>
+    taskSelected === 0 ? "" : "#F7F7F7"};
 `;
 
-export const Add = styled.div`
+export const Add = styled.div<boxProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 100%;
   background-color: #4da6b3;
+  opacity: ${({ taskSelected }) => (taskSelected === 0 ? "" : "0.5")};
   border: 1px solid #4da6b3;
   border-radius: 0 4px 4px 0;
   font-weight: 400;
+  cursor: pointer;
   &:hover {
-    cursor: pointer;
+    opacity: 0.9;
   }
 `;
 

@@ -12,8 +12,8 @@ const Modal = () => {
   const todo = useSelector((state: RootState) => state.todo.tasks);
   const [searchTodo, setSearchTodo] = useState("");
   const [progress, setProgress] = useState(0);
-  const [selected, setSelected] = useState("");
-
+  const [buttonSelected, setButtonSelected] = useState("");
+  const [taskSelected, setTaskSelected] = useState(0);
   const tasksDone = todo.filter((data: any) => {
     return data.isDone === true;
   });
@@ -32,11 +32,17 @@ const Modal = () => {
       <Search
         searchTodo={searchTodo}
         setSearchTodo={setSearchTodo}
-        selected={selected}
-        setSelected={setSelected}
+        buttonSelected={buttonSelected}
+        setButtonSelected={setButtonSelected}
       />
-      <AddItems />
-      <Items todo={todo} searchTodo={searchTodo} selected={selected} />
+      <AddItems taskSelected={taskSelected} setTaskSelected={setTaskSelected} />
+      <Items
+        todo={todo}
+        searchTodo={searchTodo}
+        buttonSelected={buttonSelected}
+        taskSelected={taskSelected}
+        setTaskSelected={setTaskSelected}
+      />
     </Container>
   );
 };

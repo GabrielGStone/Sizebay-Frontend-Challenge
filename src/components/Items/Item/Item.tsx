@@ -16,8 +16,16 @@ interface itemProps {
   id: any;
   title: string;
   isDone: boolean;
+  taskSelected: number;
+  setTaskSelected: any;
 }
-const Item: FC<itemProps> = ({ id, title, isDone }) => {
+const Item: FC<itemProps> = ({
+  id,
+  title,
+  isDone,
+  taskSelected,
+  setTaskSelected,
+}) => {
   const dispatch = useDispatch();
   const [inputText, setInputText] = useState(title);
   const [doneToggle, setDoneToggle] = useState(!!isDone);
@@ -43,16 +51,23 @@ const Item: FC<itemProps> = ({ id, title, isDone }) => {
   }, [textDebounce]);
 
   return (
-    <Box>
-      <Text value={inputText} onChange={(e) => setInputText(e.target.value)} />
-      <Buttons>
-        <DeleteTask onClick={() => dispatch(todoActions.deleteTodo(id))}>
-          <Circle2>-</Circle2>
-        </DeleteTask>
-        <CompleteTask onClick={() => handleCompleteButton()}>
-          <Circle>✓</Circle>
-        </CompleteTask>
-      </Buttons>
+    <Box onClick={() => setTaskSelected(id)}>
+      <Text
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+        taskSelected={taskSelected}
+        id={id}
+      />
+      {taskSelected === id && (
+        <Buttons>
+          <DeleteTask onClick={() => dispatch(todoActions.deleteTodo(id))}>
+            <Circle2>-</Circle2>
+          </DeleteTask>
+          <CompleteTask onClick={() => handleCompleteButton()}>
+            <Circle>✓</Circle>
+          </CompleteTask>
+        </Buttons>
+      )}
     </Box>
   );
 };

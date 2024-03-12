@@ -6,18 +6,21 @@ import { Container } from "./styles";
 interface searchProps {
   searchTodo: string;
   setSearchTodo: any;
-  selected: string;
-  setSelected: any;
+  buttonSelected: string;
+  setButtonSelected: any;
 }
 const Search: FC<searchProps> = ({
   searchTodo,
   setSearchTodo,
-  selected,
-  setSelected,
+  buttonSelected,
+  setButtonSelected,
 }) => {
   return (
     <Container>
-      <FilterButtons selected={selected} setSelected={setSelected} />
+      <FilterButtons
+        buttonSelected={buttonSelected}
+        setButtonSelected={setButtonSelected}
+      />
       <SearchBar searchTodo={searchTodo} setSearchTodo={setSearchTodo} />
     </Container>
   );

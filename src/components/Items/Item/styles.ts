@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,17 +11,24 @@ export const Box = styled.div`
   border-radius: 4px;
   color: #848484;
   margin-bottom: 8px;
-  cursor: pointer;
 `;
 
-export const Text = styled.input`
+interface textProps {
+  taskSelected: any;
+  id: any;
+}
+export const Text = styled.input<textProps>`
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 1;
   border: none;
   outline: none;
+  height: 100%;
   padding: 10px 0 10px 16px;
+  background-color: ${({ taskSelected, id }) =>
+    taskSelected === id ? "" : "#F4F4F4"};
 `;
 
 export const Buttons = styled.div`

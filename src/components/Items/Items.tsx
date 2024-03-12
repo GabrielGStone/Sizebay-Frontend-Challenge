@@ -5,14 +5,22 @@ import { FC } from "react";
 interface itemsProps {
   todo: any;
   searchTodo: string;
-  selected: string;
+  buttonSelected: string;
+  taskSelected: number;
+  setTaskSelected: any;
 }
-const Items: FC<itemsProps> = ({ todo, searchTodo, selected }) => {
+const Items: FC<itemsProps> = ({
+  todo,
+  searchTodo,
+  buttonSelected,
+  taskSelected,
+  setTaskSelected,
+}) => {
   let selectedTasks = todo;
 
-  if (selected)
+  if (buttonSelected)
     selectedTasks = selectedTasks.filter((todo: any) =>
-      selected === "done" ? todo.isDone === true : todo.isDone === false
+      buttonSelected === "done" ? todo.isDone === true : todo.isDone === false
     );
   selectedTasks = selectedTasks.filter((todo: any) =>
     todo.title.toLowerCase().includes(searchTodo.toLowerCase())
@@ -22,7 +30,13 @@ const Items: FC<itemsProps> = ({ todo, searchTodo, selected }) => {
     <Container>
       {selectedTasks.map(({ id, title, isDone }: any) => (
         <div key={id} style={{ width: "680px" }}>
-          <Item id={id} title={title} isDone={isDone} />
+          <Item
+            id={id}
+            title={title}
+            isDone={isDone}
+            taskSelected={taskSelected}
+            setTaskSelected={setTaskSelected}
+          />
         </div>
       ))}
     </Container>
