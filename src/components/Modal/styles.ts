@@ -8,4 +8,9 @@ export const Container = styled.div`
   background-color: #fff;
   border-radius: 4px;
   padding: 54px 60px;
+  @media (max-width: 1000px) {
+    width: 96%;
+    height: 97.5%;
+    padding: 48px 16px;
+  }
 `;

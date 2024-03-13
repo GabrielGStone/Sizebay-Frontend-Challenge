@@ -4,6 +4,9 @@ export const TooltipContainer = styled.div`
   position: relative;
   display: inline-block;
   width: 100%;
+  @media (max-width: 1000px) {
+    width: 87vw;
+  }
 `;
 
 export const TooltipText = styled.span`

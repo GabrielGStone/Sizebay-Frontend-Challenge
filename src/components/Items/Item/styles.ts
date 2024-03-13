@@ -11,6 +11,10 @@ export const Box = styled.div`
   border-radius: 4px;
   color: #848484;
   margin-bottom: 8px;
+  @media (max-width: 1000px) {
+    width: 100%;
+    flex: none;
+  }
 `;
 
 interface textProps {

@@ -8,6 +8,9 @@ export const Input = styled.input`
   border: none;
   outline: none;
   padding: 10px 0 10px 16px;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 export const Box = styled.div`
   display: flex;
@@ -15,6 +18,9 @@ export const Box = styled.div`
   border: 1px solid #dbdbdb;
   border-radius: 4px;
   padding-right: 16px;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const Glass = styled.div`

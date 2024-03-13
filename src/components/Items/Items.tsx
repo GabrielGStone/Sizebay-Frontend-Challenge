@@ -1,5 +1,5 @@
 import Item from "./Item";
-import { Container, Text, TextUnderLine } from "./styles";
+import { Container, Text, TextUnderLine, Wrap } from "./styles";
 import { FC } from "react";
 
 interface itemsProps {
@@ -60,7 +60,7 @@ const Items: FC<itemsProps> = ({
         </Text>
       ) : (
         selectedTasks.map(({ id, title, isDone }: any) => (
-          <div key={id} style={{ width: "680px" }}>
+          <Wrap key={id}>
             <Item
               id={id}
               title={title}
@@ -68,7 +68,7 @@ const Items: FC<itemsProps> = ({
               taskSelected={taskSelected}
               setTaskSelected={setTaskSelected}
             />
-          </div>
+          </Wrap>
         ))
       )}
     </Container>

@@ -17,6 +17,10 @@ export const Button = styled.button<ButtonProps>`
   margin-right: 8px;
   color: ${({ buttonSelected }) => (buttonSelected ? "#4da6b3" : "#848484")};
 
+  @media (max-width: 1000px) {
+    margin: 0 0 0 8px;
+  }
+
   &:hover {
     border-color: #7dd6e3;
     color: #7dd6e3;
