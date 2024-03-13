@@ -46,6 +46,7 @@ export const DeleteTask = styled.div`
   background-color: #e34f4f;
   &:hover {
     cursor: pointer;
+    background-color: #d33f3f;
   }
 `;
 
@@ -59,6 +60,7 @@ export const CompleteTask = styled.div`
   border-radius: 0 4px 4px 0;
   &:hover {
     cursor: pointer;
+    background-color: #4dd280;
   }
 `;
 
