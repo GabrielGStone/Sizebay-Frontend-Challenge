@@ -27,7 +27,7 @@ const FilterButtons: FC<buttonProps> = ({
             ? setButtonSelected("")
             : setButtonSelected("pending")
         }
-        buttonSelected={false}
+        buttonSelected={buttonSelected === "pending"}
       >
         {buttonSelected === "pending" ? "✓" : ""} Pending
       </Button>
