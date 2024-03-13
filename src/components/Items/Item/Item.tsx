@@ -11,6 +11,7 @@ import {
 import { useDispatch } from "react-redux";
 import { todoActions } from "../../../state";
 import { useDebounce } from "@uidotdev/usehooks";
+import ToolTipBox from "../../ToolTipBox";
 
 interface itemProps {
   id: any;
@@ -51,24 +52,26 @@ const Item: FC<itemProps> = ({
   }, [textDebounce]);
 
   return (
-    <Box onClick={() => setTaskSelected(id)}>
-      <Text
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        taskSelected={taskSelected}
-        id={id}
-      />
-      {taskSelected === id && (
-        <Buttons>
-          <DeleteTask onClick={() => dispatch(todoActions.deleteTodo(id))}>
-            <Circle2>-</Circle2>
-          </DeleteTask>
-          <CompleteTask onClick={() => handleCompleteButton()}>
-            <Circle>✓</Circle>
-          </CompleteTask>
-        </Buttons>
-      )}
-    </Box>
+    <ToolTipBox text="Edit task">
+      <Box onClick={() => setTaskSelected(id)}>
+        <Text
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          taskSelected={taskSelected}
+          id={id}
+        />
+        {taskSelected === id && (
+          <Buttons>
+            <DeleteTask onClick={() => dispatch(todoActions.deleteTodo(id))}>
+              <Circle2>-</Circle2>
+            </DeleteTask>
+            <CompleteTask onClick={() => handleCompleteButton()}>
+              <Circle>✓</Circle>
+            </CompleteTask>
+          </Buttons>
+        )}
+      </Box>
+    </ToolTipBox>
   );
 };
 
