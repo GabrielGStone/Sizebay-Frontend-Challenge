@@ -8,3 +8,14 @@ export const Container = styled.div`
   flex-direction: column;
   width: 102%;
 `;
+
+export const Text = styled.div`
+  display: flex;
+  color: #848484;
+  gap: 5px;
+`;
+
+export const TextUnderLine = styled.div`
+  text-decoration: underline;
+  cursor: pointer;
+`;

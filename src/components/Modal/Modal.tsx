@@ -41,6 +41,8 @@ const Modal = () => {
         searchTodo={searchTodo}
         buttonSelected={buttonSelected}
         taskSelected={taskSelected}
+        setButtonSelected={setButtonSelected}
+        setSearchTodo={setSearchTodo}
         setTaskSelected={setTaskSelected}
       />
     </Container>

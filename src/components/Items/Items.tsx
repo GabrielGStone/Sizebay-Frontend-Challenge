@@ -1,5 +1,5 @@
 import Item from "./Item";
-import { Container } from "./styles";
+import { Container, Text, TextUnderLine } from "./styles";
 import { FC } from "react";
 
 interface itemsProps {
@@ -8,6 +8,8 @@ interface itemsProps {
   buttonSelected: string;
   taskSelected: number;
   setTaskSelected: any;
+  setButtonSelected: any;
+  setSearchTodo: any;
 }
 const Items: FC<itemsProps> = ({
   todo,
@@ -15,6 +17,8 @@ const Items: FC<itemsProps> = ({
   buttonSelected,
   taskSelected,
   setTaskSelected,
+  setButtonSelected,
+  setSearchTodo,
 }) => {
   let selectedTasks = todo;
 
@@ -28,17 +32,45 @@ const Items: FC<itemsProps> = ({
 
   return (
     <Container>
-      {selectedTasks.map(({ id, title, isDone }: any) => (
-        <div key={id} style={{ width: "680px" }}>
-          <Item
-            id={id}
-            title={title}
-            isDone={isDone}
-            taskSelected={taskSelected}
-            setTaskSelected={setTaskSelected}
-          />
-        </div>
-      ))}
+      {buttonSelected === "done" && !selectedTasks.length ? (
+        <Text>
+          There are no items marked as done.{" "}
+          <TextUnderLine
+            onClick={() => {
+              setSearchTodo("");
+              setButtonSelected();
+            }}
+          >
+            Clean the search here
+          </TextUnderLine>{" "}
+          to see all items.
+        </Text>
+      ) : searchTodo && !selectedTasks.length ? (
+        <Text>
+          Your search found no results.{" "}
+          <TextUnderLine
+            onClick={() => {
+              setSearchTodo("");
+              setButtonSelected();
+            }}
+          >
+            Clean the search here
+          </TextUnderLine>{" "}
+          to see all items.
+        </Text>
+      ) : (
+        selectedTasks.map(({ id, title, isDone }: any) => (
+          <div key={id} style={{ width: "680px" }}>
+            <Item
+              id={id}
+              title={title}
+              isDone={isDone}
+              taskSelected={taskSelected}
+              setTaskSelected={setTaskSelected}
+            />
+          </div>
+        ))
+      )}
     </Container>
   );
 };
