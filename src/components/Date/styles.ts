@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  height: 79px;
+  height: 60px;
   margin-bottom: 24px;
 `;
 
@@ -27,5 +27,7 @@ export const Year = styled.div`
   font-size: 24px;
 `;
 export const Weekday = styled.div`
-  font-weight: 300;
+  align-self: flex-end;
+  font-size: 24px;
+  font-weight: 400;
 `;

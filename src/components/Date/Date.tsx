@@ -1,4 +1,4 @@
-import { Container, Day, Month, Wrap, Year } from "./styles";
+import { Container, Day, Month, Weekday, Wrap, Year } from "./styles";
 
 const Dates = () => {
   const dataAtual: Date = new Date();
@@ -12,7 +12,9 @@ const Dates = () => {
         </Wrap>
       </div>
 
-      <Year>{dataAtual.toLocaleString("en-US", { weekday: "long" })}</Year>
+      <Weekday>
+        {dataAtual.toLocaleString("en-US", { weekday: "long" })}
+      </Weekday>
     </Container>
   );
 };
