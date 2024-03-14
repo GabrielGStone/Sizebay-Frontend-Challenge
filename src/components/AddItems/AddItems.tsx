@@ -4,8 +4,8 @@ import { todoActions } from "../../state";
 import { ChangeEvent, FC, useState } from "react";
 
 interface addItemProps {
-  taskSelected: number;
-  setTaskSelected: any;
+  taskSelected?: number;
+  setTaskSelected?: any;
 }
 
 const AddItems: FC<addItemProps> = ({ taskSelected, setTaskSelected }) => {
