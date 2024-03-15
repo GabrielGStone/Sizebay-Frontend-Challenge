@@ -24,15 +24,15 @@ const AddItems: FC<addItemProps> = ({ taskSelected, setTaskSelected }) => {
   };
 
   return (
-    <Box onClick={() => setTaskSelected(0)} taskSelected={taskSelected}>
+    <Box onClick={() => setTaskSelected(0)} taskselected={taskSelected}>
       <Input
         placeholder="Add new item…"
         value={text}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
         onKeyDown={handleKeyPress}
-        taskSelected={taskSelected}
+        taskselected={taskSelected}
       />
-      <Add onClick={() => handleAddTask()} taskSelected={taskSelected}>
+      <Add onClick={() => handleAddTask()} taskselected={taskSelected}>
         <Circle>+</Circle>
       </Add>
     </Box>

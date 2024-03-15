@@ -57,7 +57,7 @@ const Item: FC<itemProps> = ({
         <Text
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          taskSelected={taskSelected}
+          taskselected={taskSelected}
           id={id}
         />
         {taskSelected === id && (

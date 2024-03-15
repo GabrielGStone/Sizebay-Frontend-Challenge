@@ -18,7 +18,7 @@ export const Box = styled.div`
 `;
 
 interface textProps {
-  taskSelected: any;
+  taskselected: number;
   id: any;
 }
 export const Text = styled.input<textProps>`
@@ -31,8 +31,8 @@ export const Text = styled.input<textProps>`
   outline: none;
   height: 100%;
   padding: 10px 0 10px 16px;
-  background-color: ${({ taskSelected, id }) =>
-    taskSelected === id ? "" : "#F4F4F4"};
+  background-color: ${({ taskselected, id }) =>
+    taskselected === id ? "" : "#F4F4F4"};
 `;
 
 export const Buttons = styled.div`

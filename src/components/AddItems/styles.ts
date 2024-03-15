@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface boxProps {
-  taskSelected?: number;
+  taskselected?: number;
 }
 
 export const Box = styled.div<boxProps>`
@@ -23,8 +23,8 @@ export const Input = styled.input<boxProps>`
   border: none;
   outline: none;
   padding: 10px 0 10px 16px;
-  background-color: ${({ taskSelected }) =>
-    taskSelected === 0 ? "" : "#F7F7F7"};
+  background-color: ${({ taskselected }) =>
+    taskselected === 0 ? "" : "#F7F7F7"};
 `;
 
 export const Add = styled.div<boxProps>`
@@ -34,7 +34,7 @@ export const Add = styled.div<boxProps>`
   width: 44px;
   height: 100%;
   background-color: #4da6b3;
-  opacity: ${({ taskSelected }) => (taskSelected === 0 ? "" : "0.5")};
+  opacity: ${({ taskselected }) => (taskselected === 0 ? "" : "0.5")};
   border: 1px solid #4da6b3;
   border-radius: 0 4px 4px 0;
   font-weight: 400;
