@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import AddItems from "../AddItems";
-import Dates from "../Date/Date";
+import Dates from "../Date/Dates";
 import Items from "../Items";
 import ProgressBar from "../ProgressBar";
 import Search from "../Search";
