@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TooltipContainer = styled.div`
   position: relative;
   display: inline-block;
-  width: 100%;
+  width: 680px;
   @media (max-width: 1000px) {
     width: 87vw;
   }
